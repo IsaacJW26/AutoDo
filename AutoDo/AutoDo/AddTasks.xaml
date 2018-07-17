@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoDo.AddTasks">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+
+            <!-- Page title -->
+            <Label Text="Add a new task"
+                   FontSize="Large" FontAttributes="Bold"/>
+            
+            <!-- Task name -->
+            <StackLayout>
+                <Label Text="Task Name"
+                       WidthRequest="200"
+                       FontSize="Medium"/>
+                
+                <Entry x:Name="taskName"
+                       Placeholder="Walk Dog, Buy Grocercies, etc."
+                       WidthRequest="200"/>
+            </StackLayout>
+            
+            <!-- Completion time -->
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                <Label Text="Estimated time in hours"
+                       FontSize="Medium"
+                       WidthRequest="200"/>
+
+                <Entry x:Name="completionTime"
+                       Keyboard="Numeric"
+                       WidthRequest="50"/>
+            </StackLayout>
+
+            <!-- Due Date -->
+            <StackLayout>
+                
+                <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                    <Label Text="Due Date"
+                       WidthRequest="200"
+                       FontSize="Medium"/>
+                    
+                    <Switch x:Name="hasDueDate"></Switch>
+                </StackLayout>
+
+                <DatePicker x:Name="dueDate"
+                            IsEnabled="{x:Binding
+                                        Source={x:Reference hasDueDate},
+                                        Path=IsToggled}"/>
+            </StackLayout>
+
+            <!-- Task Priority -->
+            <StackLayout>
+                <Label Text="Priority"
+                       WidthRequest="200"
+                       FontSize="Medium"/>
+                <Picker x:Name="priorityPicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Low (non-essential want)</x:String>
+                            <x:String>Medium (everyday things)</x:String>
+                            <x:String>High (study, work)</x:String>
+                            <x:String>Very High (survival)</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+            <!-- Add Task -->
+            <Button Text="Add Task"
+                    Pressed="Button_Pressed"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

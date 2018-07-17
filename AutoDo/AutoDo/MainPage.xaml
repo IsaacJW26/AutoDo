@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AutoDo"
+             x:Class="AutoDo.MainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="NEW+"
+                     Activated="ToolbarItem_Activated"></ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <StackLayout  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <!-- Task info -->
+        <StackLayout>
+            <Label x:Name="taskName"
+                   Text="Task Name" 
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+            <Label x:Name ="taskTime"
+                   Text="00:00:00"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+
+        <!--Buttons at end of screen-->
+        <StackLayout VerticalOptions="End">
+            <Button Text="Postphone"
+                    Clicked="postphoneButton_Clicked">
+            </Button>
+            <Button Text="Complete"
+                    Clicked="completeButton_Clicked">
+            </Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
