@@ -4,6 +4,7 @@ using System.Text;
 
 namespace AutoDo.Model
 {
+    //in progress
     public class ReoccuringTask : ITaskDecoration
     {
         public ReoccuringTask()
@@ -14,7 +15,6 @@ namespace AutoDo.Model
         public ITaskDecoration Next { get; private set; }
 
         public ITaskDecoration Top => throw new NotImplementedException();
-
 
 
         public int CalcDynamicPriority(double priority)
